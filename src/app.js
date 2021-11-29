@@ -40,6 +40,7 @@ function displayData(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "4f05e6229e1535d6052a9d9d4d3d1173";
