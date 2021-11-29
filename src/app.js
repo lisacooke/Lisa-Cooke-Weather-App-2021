@@ -41,6 +41,7 @@ function displayData(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  cTemp = response.data.main.temp;
 }
 
 //search engine
@@ -57,7 +58,19 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function displayFTemp(event) {
+  event.preventDefault();
+  let fTempConvert = (cTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fTempConvert);
+}
+
+let cTemp = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fTemp = document.querySelector("#fah-Temp-Link");
+fTemp.addEventListener("click", displayFTemp);
 
 search("New York");
