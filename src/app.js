@@ -1,4 +1,3 @@
-//getting time
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -21,7 +20,7 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-// getting weather data
+
 function displayData(response) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -43,8 +42,6 @@ function displayData(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   cTemp = response.data.main.temp;
 }
-
-//search engine
 
 function search(city) {
   let apiKey = "4f05e6229e1535d6052a9d9d4d3d1173";
