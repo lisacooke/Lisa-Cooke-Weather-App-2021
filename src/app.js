@@ -67,7 +67,7 @@ function displayFTemp(event) {
 function displayCTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement = Math.round(cTemp);
+  temperatureElement.innerHTML = Math.round(cTemp);
 }
 let cTemp = null;
 
