@@ -64,13 +64,20 @@ function displayFTemp(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fTempConvert);
 }
-
+function displayCTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement = Math.round(cTemp);
+}
 let cTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let fTemp = document.querySelector("#fah-Temp-Link");
-fTemp.addEventListener("click", displayFTemp);
+let fTempLink = document.querySelector("#fah-Temp-Link");
+fTempLink.addEventListener("click", displayFTemp);
+
+let cTempLink = document.querySelector("#cel-Temp-Link");
+cTempLink.addEventListener("click", displayCTemp);
 
 search("New York");
