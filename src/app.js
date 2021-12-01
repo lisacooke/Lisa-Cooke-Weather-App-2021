@@ -134,7 +134,7 @@ function searchLocation(position) {
   axios.get(apiUrl).then(displayData);
 }
 
-function getCurrentLocation(event) {
+function getCurrentPosition(event) {
   event.preventDefault;
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
@@ -151,6 +151,6 @@ let cTempLink = document.querySelector("#cel-Temp-Link");
 cTempLink.addEventListener("click", displayCTemp);
 
 let currentLocationButton = document.querySelector("#location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
+currentLocationButton.addEventListener("click", getCurrentPosition);
 
 search("New York");
