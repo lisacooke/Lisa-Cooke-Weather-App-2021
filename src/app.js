@@ -136,4 +136,4 @@ fTempLink.addEventListener("click", displayFTemp);
 let cTempLink = document.querySelector("#cel-Temp-Link");
 cTempLink.addEventListener("click", displayCTemp);
 
-search("New York");
+search("Warrington");
