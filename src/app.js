@@ -133,10 +133,10 @@ function displayCTemp(event) {
 }
 
 function searchLocation(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
   let apiKey = "4f05e6229e1535d6052a9d9d4d3d1173";
-  let apiUrl = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let apiUrl = `api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayData);
 }
 
