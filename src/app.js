@@ -125,6 +125,20 @@ function displayCTemp(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(cTemp);
 }
+
+function searchLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "4f05e6229e1535d6052a9d9d4d3d1173";
+  let apiUrl = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayData);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault;
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
 let cTemp = null;
 
 let form = document.querySelector("#search-form");
@@ -136,4 +150,7 @@ fTempLink.addEventListener("click", displayFTemp);
 let cTempLink = document.querySelector("#cel-Temp-Link");
 cTempLink.addEventListener("click", displayCTemp);
 
-search("Warrington");
+let currentLocationButton = document.querySelector("#location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+search("New York");
