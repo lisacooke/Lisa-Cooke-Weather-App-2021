@@ -89,6 +89,10 @@ function displayData(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  let minElement = document.querySelector("#min");
+  minElement.innerHTML = Math.round(response.data.main.temp_min);
+  let maxElement = document.querySelector("#max");
+  maxElement.innerHTML = Math.round(response.data.main.temp_min);
   let dateElement = document.querySelector("#day-time");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");

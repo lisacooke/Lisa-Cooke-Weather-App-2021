@@ -40,7 +40,7 @@ li {
   );
 }
 .weather-app-wrapper {
-  max-width: 800px;
+  max-width: 600px;
   margin: 100px auto;
 }
 .overview {
